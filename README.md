@@ -1,8 +1,3 @@
-F2-Plugin-RequireJS
-===================
-
-Providing a handy way for containers to load F2 apps using RequireJS.
-
 # Requirements
 
 This plugin requires:
@@ -34,8 +29,13 @@ Next, add your AppConfigs to the `require.config` object.
 					enableBatchRequests: true
 				}
 			]
+		},
+		initConfig: {
+			// Properties passed to F2.init()
 		}
 	});
+
+You can also specify properties you want to be passed to `F2.init()` inside the `initConfig` object. You can view a full list of configuration options in the [F2.ContainerConfig documentation](http://docs.openf2.org/sdk/classes/F2.ContainerConfig.html).
 
 # Examples
 
@@ -106,14 +106,20 @@ You'll notice that we have two sets of AppHandlers. Typically, you'd register a 
 
 ### One Require, Many Requests
 
-Using the exact code from our previous example will yield different results if we turn `enableBatchRequests` to `false` in our AppConfigs. If we tell F2 not to batch the apps, it will  make an ajax call for each appId.
+Using the exact code from our previous example will yield different results if we set `enableBatchRequests: false` in our AppConfigs. If we tell F2 not to batch the apps, it will  make an ajax call for each appId.
 
 # Troubleshooting
 
-## Uncaught ReferenceError: define is not defined
+## JavaScript Errors
+
+### Object has no method 'APP_RENDER'
+
+This happens when `F2App` did not find the requested appId in `require.config`. When this happens, the AppHandler response object will contain an `error` property with the detailed exception.
+
+### Define is not defined
 
 This is caused when RequireJS has not been added to the page. You can find the download link [here](http://requirejs.org/docs/download.html). If you've added RequireJS, make sure it is included _before_ this plugin.
 
-## Uncaught ReferenceError: F2 is not defined
+### F2 is not defined
 
 This occurs when F2.js has not been added to the page prior to this plugin. If you've already downloaded F2, make sure the order is correct. If you don't have the script, you can download it from [F2's GitHub page](https://github.com/OpenF2/F2).
