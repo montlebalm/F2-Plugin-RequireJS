@@ -1,7 +1,7 @@
 {
 	"name": "F2-Plugin-RequireJS",
-	"description": "A plugin for F2 and RequireJS that streamlines app loading.",
-	"version": "1.0",
+	"description": "Streamlining F2 app requests with RequireJS.",
+	"version": "0.1.0",
 	"keywords": ["openf2", "requirejs"],
 	"author": "Chris Montrois",
 	"repository": {
