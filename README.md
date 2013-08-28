@@ -39,6 +39,8 @@ You can also specify properties you want to be passed to `F2.init()` inside the 
 
 # Examples
 
+Please refer to the [official documentation](http://requirejs.org/docs/plugins.html) for general information on writing and using RequireJS plugins. The following examples assume a cursory knowledge of RequireJS.
+
 ## Load a Single App
 
 In this example, we'll use the RequireJS plugin, `F2App`, to load a single app where `com_example_first_app` is the appId.
