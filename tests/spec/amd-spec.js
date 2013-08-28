@@ -34,7 +34,7 @@ describe('AMD', function() {
 		expect(function() {
 			var hasApp = false;
 
-			require(["F2App!com_test_single"], function(app) {
+			require(["F2App!" + TEST_APP_ID], function(app) {
 				app.APP_RENDER(function(appConfig, appHtml) {
 					addAppToPage("testing123", appConfig, appHtml);
 				});
